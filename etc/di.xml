@@ -12,10 +12,10 @@
 
 	<!-- Detects the discount code in the URL and set a cookie to remember it -->
 	<type name="Magento\Framework\App\FrontControllerInterface">
-		<plugin
-			name="crankycyclops_discountcodeurl_frontcontrollerinterface"
-			type="Crankycyclops\DiscountCodeUrl\Plugin\Framework\App\FrontControllerInterface"
-		/>
+		<plugin name="crankycyclops_discountcodeurl_frontcontrollerinterface" type="Crankycyclops\DiscountCodeUrl\Plugin\Framework\App\FrontControllerInterface" />
+	</type>
+	<type name="Magento\Checkout\Model\Cart">
+		<plugin name="crankycyclops_apply_coupon_on_add_to_cart" type="Crankycyclops\DiscountCodeUrl\Plugin\ApplyCouponOnAddToCart" />
 	</type>
 
 </config>
