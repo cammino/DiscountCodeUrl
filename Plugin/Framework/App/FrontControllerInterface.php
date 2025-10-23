@@ -183,17 +183,17 @@ class FrontControllerInterface {
 
 						else {
 
-							$successMessage = "Discount code <strong>$coupon</strong> will be applied to your order during checkout";
+							$successMessage = "Cupom de desconto <strong>$coupon</strong> aplicado";
 
 							if ($usesPerCustomer && $usesPerCustomer > 0) {
 
 								if ($usesPerCustomer > 1) {
-									$successMessage .= " unless you've already fully consumed it (code is only valid for up to $usesPerCustomer orders";
+									$successMessage .= " se ainda não usado por completo (válido apenas para $usesPerCustomer pedidos";
 								} else {
-									$successMessage .= " unless you've already used it (code is only valid for one order";
+									$successMessage .= " se ainda não usado (válido apenas para um pedido";
 								}
 
-								$successMessage .= " per customer)";
+								$successMessage .= " por cliente)";
 							}
 
 							// As documented in
