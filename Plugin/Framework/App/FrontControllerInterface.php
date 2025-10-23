@@ -136,9 +136,9 @@ class FrontControllerInterface {
 
 			if ($coupon) {
 
-				$invalidMessage = "Discount code <strong>$coupon</strong> is invalid";
-				$expiredMessage = "Unfortunately, the <strong>$coupon</strong> discount code is expired";
-				$consumedMessage = "Unfortunately, the <strong>$coupon</strong> discount code has been fully consumed";
+				$invalidMessage = "Cupom <strong>$coupon</strong> é inválido";
+				$expiredMessage = "Infelizmente, o cupom <strong>$coupon</strong> está expirado";
+				$consumedMessage = "Infelizmente, o cupom <strong>$coupon</strong> já foi usado por completo";
 
 				$this->couponModel->loadByCode($coupon);
 
