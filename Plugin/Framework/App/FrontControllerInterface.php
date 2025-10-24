@@ -97,7 +97,7 @@ class FrontControllerInterface {
 	 * @return void
 	 */
 	public function beforeDispatch(\Magento\Framework\App\FrontControllerInterface $subject): void {
-
+		
 		if ($this->config->isEnabled()) {
 
 			$queryParameter = $this->config->getUrlParameter();

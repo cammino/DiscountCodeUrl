@@ -21,6 +21,10 @@
 	<event name="sales_order_place_after">
 		<observer name="crankycyclops_discountcodeurl_sales_order_place_after" instance="Crankycyclops\DiscountCodeUrl\Observer\Discountcodeurl\SalesOrderPlaceAfter" />
 	</event>
+	
+	<event name="controller_action_predispatch">
+		<observer name="crankycyclops_discounturl_predispatch" instance="Crankycyclops\DiscountCodeUrl\Observer\ApplyCouponObserver" />
+	</event>
 
 </config>
 

@@ -28,13 +28,20 @@ class ApplyCouponOnAddToCart
         \Magento\Checkout\Model\Cart $subject,
         $result
     ) {
-        $coupon = $this->registry->registry('crankycyclops_discounturl_coupon');
+        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+        $logger = $objectManager->get(\Psr\Log\LoggerInterface::class);
+        $logger->info('[Crankycyclops - Coupon URL] - Iniciou o plugin de add to cart.');
+        $coupon = $this->registry->registry('crankycyclops_discounturl_coupon_noquote');
+        $cookieHelper = $objectManager->get(\Crankycyclops\DiscountCodeUrl\Helper\Cookie::class);
+    	$coupon = $cookieHelper->getCookie();
+        $logger->info('[Crankycyclops - Coupon URL] - coupon: ' . $coupon);
         if (!empty($coupon)) {
             $quote = $this->checkoutSession->getQuote();
             if (!$quote->getCouponCode()) {
+                $logger->info('[Crankycyclops - Coupon URL] - entrou no if tudo.');
                 $this->cartHelper->applyCoupon($quote, $coupon);
             }
-            $this->registry->unregister('crankycyclops_discounturl_coupon');
+            $this->registry->unregister('crankycyclops_discounturl_coupon_noquote');
         }
         return $result;
     }
