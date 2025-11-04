@@ -30,15 +30,14 @@ class ApplyCouponOnAddToCart
     ) {
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
         $logger = $objectManager->get(\Psr\Log\LoggerInterface::class);
-        $coupon = $this->registry->registry('crankycyclops_discounturl_coupon_noquote');
         $cookieHelper = $objectManager->get(\Crankycyclops\DiscountCodeUrl\Helper\Cookie::class);
     	$coupon = $cookieHelper->getCookie();
         if (!empty($coupon)) {
             $quote = $this->checkoutSession->getQuote();
             if (!$quote->getCouponCode()) {
                 $this->cartHelper->applyCoupon($quote, $coupon);
+                $cookieHelper->setCookie(null);
             }
-            $this->registry->unregister('crankycyclops_discounturl_coupon_noquote');
         }
         return $result;
     }

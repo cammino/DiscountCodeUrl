@@ -69,6 +69,7 @@ class CheckoutCartSaveAfter implements \Magento\Framework\Event\ObserverInterfac
 
 				if ($cart) {
 					$this->cartHelper->applyCoupon($cart->getQuote(), $coupon);
+					$this->cookieHelper->setCookie(null);
 				}
 			}
 		}
