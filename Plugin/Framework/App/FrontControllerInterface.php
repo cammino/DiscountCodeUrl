@@ -208,10 +208,10 @@ class FrontControllerInterface {
 							// don't know how many hours I pulled my hair
 							// out figuring this out...
 							$this->registry->register('crankycyclops_discounturl_coupon', $coupon);
-							$this->registry->register('crankycyclops_discounturl_message', [
-								'message' => __($successMessage),
-								'error' => false
-							]);
+							//$this->registry->register('crankycyclops_discounturl_message', [
+							//	'message' => __($successMessage),
+							//	'error' => false
+							//]);
 						}
 					}
 
