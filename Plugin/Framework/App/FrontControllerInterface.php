@@ -159,26 +159,26 @@ class FrontControllerInterface {
 
 						// Discount code is expired
 						if ($expirationDay && strtotime($expirationDay) < $today) {
-							$this->registry->register('crankycyclops_discounturl_message', [
-								'message' => __($expiredMessage),
-								'error' => true
-							]);
+							//$this->registry->register('crankycyclops_discounturl_message', [
+							//	'message' => __($expiredMessage),
+							//	'error' => true
+							//]);
 						}
 
 						// Discount hasn't started yet
 						else if ($startDay && strtotime($startDay) > $today) {
-							$this->registry->register('crankycyclops_discounturl_message', [
-								'message' => __($invalidMessage),
-								'error' => true
-							]);
+							//$this->registry->register('crankycyclops_discounturl_message', [
+							//	'message' => __($invalidMessage),
+							//	'error' => true
+							//]);
 						}
 
 						// Coupon has already been fully consumed
 						else if ($maxUses && $numUses >= $maxUses) {
-							$this->registry->register('crankycyclops_discounturl_message', [
-								'message' => __($consumedMessage),
-								'error' => true
-							]);
+							//$this->registry->register('crankycyclops_discounturl_message', [
+							//	'message' => __($consumedMessage),
+							//	'error' => true
+							//]);
 						}
 
 						else {
