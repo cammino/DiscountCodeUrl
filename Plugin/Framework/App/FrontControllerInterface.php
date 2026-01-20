@@ -216,18 +216,18 @@ class FrontControllerInterface {
 					}
 
 					else {
-						$this->registry->register('crankycyclops_discounturl_message', [
-							'message' => __($invalidMessage),
-							'error' => true
-						]);
+						//$this->registry->register('crankycyclops_discounturl_message', [
+						//	'message' => __($invalidMessage),
+						//	'error' => true
+						//]);
 					}
 				}
 
 				else {
-					$this->registry->register('crankycyclops_discounturl_message', [
-						'message' => __($invalidMessage),
-						'error' => true
-					]);
+					//$this->registry->register('crankycyclops_discounturl_message', [
+					//	'message' => __($invalidMessage),
+					//	'error' => true
+					//]);
 				}
 			}
 		}
